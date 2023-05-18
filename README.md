@@ -1,2 +1,2 @@
 # OtarGvritishvili
-O.G>
+O.G.
