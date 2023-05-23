@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>
+            Homework 2
+        </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="#">
+    </head>
+    <body>
+        <header>
+
+        </header>
+
+        <main>
+
+        </main>
+
+        <footer>
+
+        </footer>
+
+        <script type="text/javascript"> 
+            let htmlBody = 
+            {
+                header: "to head content",
+                main: "to main contenet",
+                footer: "to footer content",
+            }
+
+            let html = ["head", "body"]
+
+// 1. შექმენით პროგრამა, რომელიც შეამოწმებს, არის თუ არა კონკრეტული ცვლადის მნიშვნელობა მასივი.
+         
+            alert(typeof htmlBody);
+            alert(Array.isArray(htmlBody));
+
+
+            alert(typeof html);
+            alert(Array.isArray(html));
+
+// 2. შექმენით პროგრამა, რომელიც გამოიტანს მასივის პირველ ელემენტს.
+            
+            alert(html[0]);
+
+// 3. შექმენით პროგრამა, რომელიც გამოიტანს მასივის ბოლო ელემენტს.
+            
+            alert(html[html.length - 1]);
+            
+// 4.
+            let color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
+            let o = ["th","st","nd","rd"];
+
+            let choice = "auto"; // (მინშვნელობები: 1, 2, 3 ან "auto")
+            
+            if (choice == 1) 
+            {
+                alert("1" + "-" + o[1] + " " + "choice is" + " " + color[0]);
+            } 
+            else if (choice == 2)
+            {
+                alert("2" + "-" + o[2] + " " + "choice is" + " " + color[1]);
+            } 
+            else if (choice == 3) 
+            {
+                alert("3" + "-" + o[3] + " " + "choice is" + " " + color[2]);
+            }
+            else if (choice == "auto")
+            {
+                alert("1" + "-" + o[1] + " " + "choice is" + " " + color[0]);
+                alert("2" + "-" + o[2] + " " + "choice is" + " " + color[1]);
+                alert("3" + "-" + o[3] + " " + "choice is" + " " + color[2]);
+            }
+            else {
+                alert("შეიყვანეთ choice ცვლადში თქვენი არჩევნანი"); 
+            }
+//5 object.
+            let aboutMe = 
+            {
+                name: "Otar",
+                surname: "Gvritishvili",
+                age: 27,
+                profession: "Manager",
+                workStatus: "employed"
+            }
+            aboutMe.nickname = "O.G.";
+            delete aboutMe.workStatus;
+            aboutMe.profession = "Developer";
+
+            alert(aboutMe.name);
+            alert(aboutMe.surname);
+            alert(aboutMe.age);
+            alert(aboutMe.profession);
+            alert(aboutMe.workStatus);
+
+        </script>
+    </body>
+</html>
