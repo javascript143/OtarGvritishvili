@@ -48,24 +48,28 @@ function eight() {
 
 function nine() {
     let number9 = document.getElementById("9").innerHTML;
-    let oldDisplayValue = document.getElementById("calcDisplay").value
+    let oldDisplayValue = document.getElementById("calcDisplay").value;
     document.getElementById("calcDisplay").value = oldDisplayValue + number9;
 }
 
 function zero() {
     let number0 = document.getElementById("0").innerHTML;
-    let oldDisplayValue = document.getElementById("calcDisplay").value
+    let oldDisplayValue = document.getElementById("calcDisplay").value;
     document.getElementById("calcDisplay").value = oldDisplayValue + number0;
 }
 
 
-
+function annul () {
+    let annul = document.getElementById("annul").innerHTML;
+    let oldDisplayValue = document.getElementById("calcDisplay").value;
+    document.getElementById("calcDisplay").value = "";
+}
 
 function plus() {
     let plus = document.getElementById("plus").innerHTML;
     let oldDisplayValue = document.getElementById("calcDisplay").value;
 
-    if (oldDisplayValue == "") { // same as oldDisplayValue.length == 0
+    if (oldDisplayValue == "") { 
         return;
     }
 
@@ -73,7 +77,7 @@ function plus() {
     count = 0;
     for (let char of oldDisplayValue) {
         if (char == "+") {
-            count++; // same as count = count + 1
+            count++; 
         }
     }
 
@@ -167,19 +171,38 @@ function equal() {
         for (let number of numbers) {
             sum = sum + parseInt(number);
         }
+        document.getElementById("calcDisplay").value = sum;
 
-        document.getElementById("calcDisplay").value = sum;        
     } else if (oldDisplayValue.includes("-")) {
-        let numbers = oldDisplayValue.split("-");
-        console.log(numbers);
+        numbers = oldDisplayValue.split("-");
 
-        let difference = 0;
+        let difference = numbers[0];
 
-        for (let number of numbers) {
-            difference = difference + parseInt(number);
+        for (count = 1; count < numbers.length; count += 1) {
+            difference = difference - parseInt(numbers[count]);
         }
 
         document.getElementById("calcDisplay").value = difference;        
-    } 
+    } else if (oldDisplayValue.includes("*")) {
+        numbers = oldDisplayValue.split("*");
+
+        let multiply = 1;
+
+        for(number of numbers) {
+            multiply = multiply * parseInt(number);
+        }
+
+        document.getElementById("calcDisplay").value = multiply;
+    } else if (oldDisplayValue.includes("/")) {
+        numbers = oldDisplayValue.split("/");
+
+        let division = numbers[0];
+
+        for (count = 1; count < numbers.length; count += 1) {
+            division = division / parseInt(numbers[count]);
+        }
+
+        document.getElementById("calcDisplay").value = division;
+    }
 
 }
